@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #221d38;
+  color: whitesmoke;
+}
+
+canvas {
+  background: #867443;
+  background: radial-gradient(circle at 33% 115%, #867443 4%, #805a42 15%, #221d38 34%);
+  background-position-y: 147px;
+}
+
+.wrapper {
+  font-family: "Fredericka the Great", cursive;
+  position: relative;
+}
+
+.game_space {
+  background-color: #5f5f5f;
+  background: radial-gradient(circle, #867443 4%, #805a42 15%, #221d38 34%);
+  border: 1px solid #666;
+  color: whitesmoke;
+  left: 50%;
+  margin-top: -6px;
+  position: fixed;
+  top: 21rem;
+  transform: translate(-50%, -50%);
+  width: 720px;
+}
+
+.game_space.playing {
+  cursor: none;
+}
+
+.canvasWrapper {
+  animation: ship_move_y 3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, ship_move_x 2.5s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  background: url("https://assets.codepen.io/215128/ship_dark.webp");
+  background-repeat: no-repeat;
+  background-position: -210px 190px;
+  height: 300px;
+  position: relative;
+  width: 720px;
+  z-index: 0;
+}
+
+@keyframes ship_move_x {
+  0% {
+    background-position-x: -210px;
+  }
+  50%, 100% {
+    background-position-x: 350px;
+  }
+}
+@keyframes ship_move_y {
+  0% {
+    background-position-y: 190px;
+  }
+  50%, 100% {
+    background-position-y: 75px;
+  }
+}
+.messaging {
+  font-size: 4rem;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 10px whitesmoke;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.messaging span {
+  display: inline-block;
+}
+
+.messaging span.h2 {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 10px firebrick;
+}
+
+.messaging span.h3 {
+  font-size: 1.9rem;
+  margin-top: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 10px #241e9e;
+}
+
+.messaging span.h3 .action {
+  margin-top: 0;
+  width: 55px;
+}
+
+.level_display,
+.score_display {
+  animation: reveal_score_display 1.5s ease-out forwards;
+  animation-delay: 1.5s;
+  font-size: 1.6rem;
+  height: 2.5rem;
+  margin: -8rem auto 0;
+  overflow: hidden;
+  padding: 0 8px;
+  text-align: right;
+  width: 720px;
+}
+
+.level_display {
+  animation: reveal_level_display 1.5s ease-out forwards;
+  text-align: left;
+}
+
+.level_display.hidden,
+.score_display.hidden {
+  margin-top: -8rem;
+}
+
+@keyframes reveal_score_display {
+  0% {
+    margin-top: -8rem;
+  }
+  50%, 100% {
+    margin-top: 3rem;
+  }
+}
+@keyframes reveal_level_display {
+  0% {
+    margin-top: -8rem;
+  }
+  50%, 100% {
+    margin-top: -2.5rem;
+  }
+}
+.loading_font {
+  position: fixed;
+  top: -9999px;
+}
+
+.hidden {
+  display: none;
+}
