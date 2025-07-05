@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +13,7 @@ html {
 body {
   background: #221d38;
   color: whitesmoke;
+  overflow-x: hidden;
 }
 
 canvas {
@@ -61,6 +63,7 @@ canvas {
     background-position-x: 350px;
   }
 }
+
 @keyframes ship_move_y {
   0% {
     background-position-y: 190px;
@@ -69,6 +72,7 @@ canvas {
     background-position-y: 75px;
   }
 }
+
 .messaging {
   font-size: 4rem;
   left: 50%;
@@ -133,6 +137,7 @@ canvas {
     margin-top: 3rem;
   }
 }
+
 @keyframes reveal_level_display {
   0% {
     margin-top: -8rem;
@@ -141,6 +146,7 @@ canvas {
     margin-top: -2.5rem;
   }
 }
+
 .loading_font {
   position: fixed;
   top: -9999px;
@@ -148,4 +154,107 @@ canvas {
 
 .hidden {
   display: none;
+}
+
+/* ---------------------------------
+   HOME BUTTON STYLE (from button.css)
+---------------------------------- */
+.button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.button {
+  background-color: #0b3d91;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #1c56c0;
+  transform: scale(1.05);
+}
+
+/* ---------------------------------
+   MOBILE TILT BUTTONS (only show on ≤500px)
+---------------------------------- */
+.tilt-controls {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 56%;
+  }
+
+  body {
+    font-size: 1.4rem;
+  }
+
+  .game_space {
+    position: relative;
+    width: 95%;
+    height: auto;
+    top: unset;
+    left: unset;
+    transform: none;
+    margin: 20px auto;
+  }
+
+  .canvasWrapper {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .score_display,
+  .level_display {
+    width: 95%;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .tilt-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+  }
+
+  .tilt-btn {
+    background-color: #0b3d91;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+    transition: 0.3s;
+  }
+
+  .tilt-btn:hover {
+    background-color: #1c56c0;
+    transform: scale(1.05);
+  }
+}
+
+/* Optional Tablet View */
+@media (min-width: 501px) and (max-width: 1024px) {
+  .game_space {
+    width: 90%;
+    height: auto;
+  }
+
+  .canvasWrapper {
+    height: 250px;
+  }
 }
