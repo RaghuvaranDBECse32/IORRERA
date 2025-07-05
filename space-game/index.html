@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Simulation Game of Orreus....</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile Responsive -->
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./button.css"> <!-- Button CSS -->
+  <link rel="stylesheet" href="./button.css">
+  <link rel="stylesheet" href="./tilt-buttons.css"> <!-- For Tilt Buttons -->
 </head>
 <body>
-<!-- Button Container -->
+
+<!-- Home Button -->
 <div class="button-container">
   <a href="https://raghuvarandbecse32.github.io/Chronicalc/" class="button" target="_blank">Home</a>
 </div>
@@ -23,9 +26,24 @@
   <div class="loading_font" aria-hidden="true">&nbsp;</div>
 </div>
 
-
+<!-- Tilt Control Buttons (Mobile-Friendly) -->
+<div class="tilt-controls">
+  <button class="tilt-btn" onclick="tiltUp()">⬆️ Tilt Up</button>
+  <button class="tilt-btn" onclick="tiltDown()">⬇️ Tilt Down</button>
+</div>
 
 <script src="./script.js"></script>
+<script>
+  function tiltUp() {
+    alert("Tilting Up (custom logic here)");
+    // Add your game tilt-up logic
+  }
+
+  function tiltDown() {
+    alert("Tilting Down (custom logic here)");
+    // Add your game tilt-down logic
+  }
+</script>
 
 </body>
 </html>
